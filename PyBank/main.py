@@ -5,7 +5,7 @@ import os
 #CSV and Reader
 RawBudgetData= os.path.join("Resources", "budget_data.csv")
 BudgetAnalysis = os.path.join("analysis", "budget_analysis.txt")
-with open(RawBudgetData) as BudgetData
+with open(RawBudgetData) as BudgetData:
 
 #Parameters
 TotalMonths = 0
@@ -24,7 +24,7 @@ Bud_reader = csv.reader(BudgetData)
     NetTotal = NetTotal + int(FirstRow,[1])
     prevNet = int(FirstRow, [1])
 
-for row in Bud_reader
+for row in Bud_reader:
 #Totals
     TotalMonths = TotalMonths + 1
     NetTotal = NetTotal + int(FirstRow,[1])
@@ -57,5 +57,5 @@ output = (
     f"Greatest Decrease in Profits: {greatest_decrease[0]} (${greatest_decrease[1]})\n")
 print(output)
 
-with open(BudgetAnalysis, "w") as txt_file
+with open(BudgetAnalysis, "w") as txt_file:
     txt_file.write(output)
